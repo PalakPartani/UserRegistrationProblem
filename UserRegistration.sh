@@ -2,6 +2,7 @@
 echo "Welcome to user registration problem "
 userNamePattern="[A-Z]{1}[A-Za-z]{2,}"
 emailIdPattern="^[A-Za-z]*([.|+|-|_]?[A-Za-z]+)?[@]{1}[A-Za-z]{2,}[.]{1}[A-Za-z]{2,}([.]?[A-Za-z]{2,})?$"
+checkNumber="^[1-9]{2}\s?[1-9]{1}[0-9]{9}$"
 #function to check validation
 function checkUserDetails(){
 	
@@ -20,5 +21,7 @@ checkUserDetails $lastName $userNamePattern
 echo "Enter Emailid :"
 read emailId
 checkUserDetails $emailId $emailIdPattern 
-
+echo "Enter mobile no preceeding country code "
+read number
+checkUserDetails $number $checkNumber 
 
